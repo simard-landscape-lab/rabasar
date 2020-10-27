@@ -1,0 +1,72 @@
+# OS Files
+.DS_Store
+.DS_Store?
+
+# Vim files
+*.sw[mnop]
+
+# Data Files
+*.zip
+*.tar.gz
+*.dat
+
+# .pyenv files
+.python-version
+
+# pytest files
+.pytest_cache/
+
+# Jupyter files
+*.ipynb_checkpoints
+
+# Python build files
+build/
+
+# VS Code
+*.vscode
+
+# Rope Files
+.ropeproject/
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Setuptools distribution folder.
+/dist/
+
+# Python egg metadata, regenerated from source files by setuptools.
+/*.egg-info
+
+# Environments
+.env
+.envrc
+
+# Gdal and other image formats
+*.tif
+*.xml
+*.shp
+*.sbx
+*.sbn
+*.shx
+*.prj
+*.dbf
+*.cpg
+*.msk
+*.kmz
+*.jpg
+*.wld
+*.geojson
+
+# Plots
+*.png
+
+# Log files
+*.log
+
+# Pickle Data
+*.pkl
+
+# Old Notebooks
+deprecated/
