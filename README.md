@@ -19,21 +19,7 @@ More explicitly, using the anaconda distribution for Mac or Windows:
 
 You can make sure your installation was done correctly running `python -c "import rabasar"` and/or running the notebooks.
 
-# Algorithm Description
-
-We have a speckle backscatter intensity image $I_0$ and we want to find $R$ such that:
-
-$$
-R = \argmin_{I \in \mathbb R^{M \times N}} \mathcal{R}(I) + P(I | I_0).
-$$
-
-Above $\mathcal{R}:\mathbb R^{M \times N} \to \mathbb R$ is an image regularizer such as the [total-variation norm](https://en.wikipedia.org/wiki/Total_variation_denoising) $|I|_1$ or [BM3D](http://www.cs.tut.fi/~foi/GCF-BM3D/). The noise model $P(I | I_0)$ is the fully-developed speckle model (see this [paper](https://arxiv.org/abs/1704.05335) and references therein). This tool is then applied to:
-+  "reference image" (called the super-image in the paper): the temporally averaged image from the intensity stack.
-+  ratio of each intensity image and the reference image (using a slightly different noise model).
-
-The final de-sepeckled image is then the (denoised ratio) $\times$ (the denoised reference image). Each denoising step is solved using the [Alternating Direction Method of Multipliers](https://web.stanford.edu/~boyd/papers/admm_distr_stats.html) (ADMM).
-
-## References
+# References
 
 ### Rabasar
 + Zhao, et al. [RABASAR](https://hal.archives-ouvertes.fr/hal-01791355/), 2019.
@@ -50,5 +36,3 @@ Splitting and Constrained Optimization](https://arxiv.org/pdf/0912.1845.pdf), 20
 Learning via the Alternating Direction
 Method of Multipliers](https://web.stanford.edu/~boyd/papers/pdf/admm_distr_stats.pdf), 2010.
 + Chan, et al. [Plug-and-Play ADMM for Image Restoration: Fixed Point Convergence and Applications](https://arxiv.org/abs/1605.01710), 2016.
-
-
