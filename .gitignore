@@ -70,3 +70,6 @@ __pycache__/
 
 # Old Notebooks
 deprecated/
+
+# Algorithm Description
+algorithm_description.md
