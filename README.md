@@ -20,10 +20,11 @@ The installations are based on python 3.7+ using anaconda and conda within a vir
 
 More explicitly, using the anaconda distribution for Mac or Windows:
 
-1. `conda create --name rabasar_env python=3.7`
-2. `conda activate rabasar_env`
-3. `conda install -c conda-forge --yes --file requirements.txt`
-4. `pip install .` 
+1. Navigate to the directory with this repository on your local machine. 
+2. `conda create --name rabasar_env python=3.7`
+3. `conda activate rabasar_env`
+4. `conda install -c conda-forge --yes --file requirements.txt`
+5. `pip install .` 
     
 5. Ensure your python can be found by jupyter via `python -m ipykernel install --user`
 
