@@ -35,11 +35,11 @@ You can make sure your installation was done correctly running `python -c "impor
 ### Rabasar
 + Zhao, et al. [RABASAR](https://hal.archives-ouvertes.fr/hal-01791355/), 2019.
 + Zhao, et al. [Github Repo](https://github.com/WeiyingZhao/Multitemporal-SAR-image-denoising), 2019.
-+ Zhao's [Thesis](https://perso.telecom-paristech.fr/tupin/PUB/PhDSu.pdf) - contains a few more numerical experiments and background than the papers above.
++ Zhao's [Thesis](https://perso.telecom-paristech.fr/tupin/PUB/PhDSu.pdf) - contains more numerical experiments and extensive background.
 
 ### Spatial Denoising
 +  Bioucas-Dias and Figueiredo. [Multiplicative Noise Removal Using Variable
-Splitting and Constrained Optimization](https://arxiv.org/pdf/0912.1845.pdf), 2010. Note this is a "special case" of the [Plug-and-Play ADMM](https://arxiv.org/abs/1605.01710) below using only the TV regularizer.
+Splitting and Constrained Optimization](https://arxiv.org/pdf/0912.1845.pdf), 2010. Note this is a "special case" of the [Plug-and-Play ADMM](https://arxiv.org/abs/1605.01710) below. The regularizer here is TV.
 + Delladelle, et al. [MuLoG: Multi-channel Logarithm with Gaussian denoising](https://arxiv.org/abs/1704.05335), 2017.
 
 ### ADMM
@@ -47,4 +47,4 @@ Splitting and Constrained Optimization](https://arxiv.org/pdf/0912.1845.pdf), 20
 + Boyd, et al. [Distributed Optimization and Statistical
 Learning via the Alternating Direction
 Method of Multipliers](https://web.stanford.edu/~boyd/papers/pdf/admm_distr_stats.pdf), 2010.
-+ Chan, et al. [Plug-and-Play ADMM for Image Restoration: Fixed Point Convergence and Applications](https://arxiv.org/abs/1605.01710), 2016.
++ Chan, et al. [Plug-and-Play ADMM for Image Restoration: Fixed Point Convergence and Applications](https://arxiv.org/abs/1605.01710), 2016. This is a general methodology for any regularizer and noise model such that each term satisfies a particular global criterion. This encompasses the Bioucas-Dias and Figueiredo method above.
