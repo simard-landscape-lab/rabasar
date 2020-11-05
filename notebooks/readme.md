@@ -18,7 +18,7 @@ We demonstrate the RABASAR multitemporal denoising on ALOS-1 and UAVSAR Images.
 
 4. Inspect the products in `out/uavsar_waxlake_tv/` or `out/uavsar_waxlake_bm3d/` depending on the regularizer.
 
-Note this could in theory be adapted at other sites that have the newly added `*.rtc` file. However, note we had to manually download numerous files and organize them. This was quite time-intensive.
+Note this could in theory be adapted at other sites at the [UAVSAR Data Portal](https://uavsar.jpl.nasa.gov/cgi-bin/data.pl) that have the newly added `*.rtc` file (this indicates the pixelwise multiplicative factor for the radiometric and terrain correction). However, note we had to manually download numerous files and organize them. This was quite time-intensive. Moreover, the UAVSAR data is not distributed with gdal-readable metadata so we needed to reformat these images so that we can use our GIS tools as usual.
 
 ### ALOS-1 at Waxlake.
 
