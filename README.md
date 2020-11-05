@@ -9,7 +9,7 @@ We have two primary goals in this repository:
 1. to explore the RABASAR methodology in python including a detailed comparison of related spatial denoising techniques.
 2. to apply the RABASAR methodology to open L-band images from UAVSAR and ALOS-1 in preparation for NISAR. 
 
-For 2., a majority of each [notebook](notebooks/) is dedicated to reprojecting the open imagery into a datacube, inspecting/testing algorithms to determine parameters, saving the output products, plotting subsets, etc. As such, we expect this code to be picked apart and improved as needed for specific SAR applications.
+Because we are testing this methodology on larger areas and with two different sensors, the [notebooks](notebooks/) are predominantly dedicated to reprojecting the open imagery into a datacube, inspecting/testing algorithms to determine de-speckling parameters, saving the output products so we can later inspect them, etc. As such, we expect this code to be picked apart and improved as needed for specific SAR applications.
 
 # Installation
 
@@ -35,10 +35,11 @@ You can make sure your installation was done correctly running `python -c "impor
 ### Rabasar
 + Zhao, et al. [RABASAR](https://hal.archives-ouvertes.fr/hal-01791355/), 2019.
 + Zhao, et al. [Github Repo](https://github.com/WeiyingZhao/Multitemporal-SAR-image-denoising), 2019.
++ Zhao's [Thesis](https://perso.telecom-paristech.fr/tupin/PUB/PhDSu.pdf) - contains a few more numerical experiments and background than the papers above.
 
 ### Spatial Denoising
 +  Bioucas-Dias and Figueiredo. [Multiplicative Noise Removal Using Variable
-Splitting and Constrained Optimization](https://arxiv.org/pdf/0912.1845.pdf), 2010.
+Splitting and Constrained Optimization](https://arxiv.org/pdf/0912.1845.pdf), 2010. Note this is a "special case" of the [Plug-and-Play ADMM](https://arxiv.org/abs/1605.01710) below using only the TV regularizer.
 + Delladelle, et al. [MuLoG: Multi-channel Logarithm with Gaussian denoising](https://arxiv.org/abs/1704.05335), 2017.
 
 ### ADMM
