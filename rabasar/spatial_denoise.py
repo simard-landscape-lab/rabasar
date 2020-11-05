@@ -56,12 +56,16 @@ def admm_spatial_denoise(img: np.ndarray,
     regularizer_params : dict
         For `tv`:
             + {
-                'weight': float
+                'weight': weight (float)
               }
         For `bm3d`:
             + {
-                'weight`: float
+                'weight': weight (float)
               }
+        If you wanted to add more keyword arguments to the denoiser, this would
+        be the place to do so. It would be easy, for example, to update this
+        function so that all the possible arguments of the `bregman_tv_denoise`
+        of skimage were available to control by the user.
     max_admm_iterations : int
         The maximum number of iterations. Default = 10.
     newton_iterations : int
