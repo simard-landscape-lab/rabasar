@@ -48,3 +48,11 @@ Splitting and Constrained Optimization](https://arxiv.org/pdf/0912.1845.pdf), 20
 Learning via the Alternating Direction
 Method of Multipliers](https://web.stanford.edu/~boyd/papers/pdf/admm_distr_stats.pdf), 2010.
 + Chan, et al. [Plug-and-Play ADMM for Image Restoration: Fixed Point Convergence and Applications](https://arxiv.org/abs/1605.01710), 2016. This is a general methodology for any regularizer and noise model such that each term satisfies a particular global criterion. This encompasses the Bioucas-Dias and Figueiredo method above.
+
+# License
+
+See [LICENSE.txt](LICENSE.txt).
+
+>Copyright 2020, by the California Institute of Technology. ALL RIGHTS RESERVED. United States Government Sponsorship acknowledged. Any commercial use must be negotiated with the Office of Technology Transfer at the California Institute of Technology.
+
+>This software may be subject to U.S. export control laws. By accepting this software, the user agrees to comply with all applicable U.S. export laws and regulations. User has the responsibility to obtain export licenses, or other export authority as may be required before exporting such information to foreign countries or providing access to foreign persons.
