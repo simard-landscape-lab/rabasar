@@ -2,6 +2,15 @@
 
 This is a python implementation of Ratio-Based Multitemporal SAR Images Denoising from the [RABASAR](https://hal.archives-ouvertes.fr/hal-01791355/) paper. RABASAR is application of the so-called [plug-and-play denoisers](https://arxiv.org/abs/1605.01710) for SAR image de-speckling to a temporal stack of intensity images. 
 
+## Objectives
+
+We have two primary goals in this repository:
+
+1. to explore the RABASAR methodology in python including a detailed comparison of related spatial denoising techniques.
+2. to apply the RABASAR methodology to open L-band images from UAVSAR and ALOS-1 in preparation for NISAR. 
+
+For 2., a majority of each [notebook](notebooks/) is dedicated to reprojecting the open imagery into a datacube, inspecting/testing algorithms to determine parameters, saving the output products, plotting subsets, etc. As such, we expect this code to be picked apart and improved as needed for specific SAR applications.
+
 # Installation
 
 The installations are based on python 3.7+ using anaconda and conda within a virtual environment. Generally, this is accomplished as follows:
@@ -14,10 +23,12 @@ More explicitly, using the anaconda distribution for Mac or Windows:
 1. `conda create --name rabasar_env python=3.7`
 2. `conda activate rabasar_env`
 3. `conda install -c conda-forge --yes --file requirements.txt`
-4. `pip install .` (maybe at some point, we can distribute on pypi)
+4. `pip install .` 
+    
 5. Ensure your python can be found by jupyter via `python -m ipykernel install --user`
 
-You can make sure your installation was done correctly running `python -c "import rabasar"` and/or running the notebooks.
+You can make sure your installation was done correctly running `python -c "import rabasar"` and/or running the notebooks. At some point, we may distribute on `pypi`, though would want more robust tests and simpler demonstrations.
+
 
 # References
 

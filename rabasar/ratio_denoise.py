@@ -16,6 +16,55 @@ def admm_ratio_denoise(img: np.ndarray,
                        denoiser_iterations: int = 10,
                        x_init: np.ndarray = None,
                        convergence_crit: float = 1e-5) -> np.ndarray:
+    """
+    We use the variables using Boyd's ADMM review article in [1].
+
+    This is essentially the same implementation as the `admm_spatial_denoise`
+    in `spatial_denoise.py` save for the likelihood function used for the noise
+    model as noted in the Rabasar paper [2] and some initialization. It may be
+    good to combine them using the common implementations, but for clarity we
+    leave them separat.
+
+    [1] https://stanford.edu/~boyd/papers/pdf/admm_distr_stats.pdf
+    [2] https://hal.archives-ouvertes.fr/hal-01791355v2
+
+    Parameters
+    ----------
+    img : np.ndarray
+        The ratio image. The image is I / I_ta, where I is the image in the
+        time series and I_ta is the temporally averaged reference.
+    L : float
+        This is the ENL for img in the numerator.
+    Lm: float
+        This is the ENL of the temporally averaged reference image in the
+        denominator of the ratio.
+    regularizer : str
+        The string identifier for the regularizer. The accepted values are `tv`
+        and `bm3d`.
+    regularizer_params : dict
+        For `tv`:
+            + {
+                'weight': float
+              }
+        For `bm3d`:
+            + {
+                'weight`: float
+              }
+    max_admm_iterations : int
+        The maximum number of iterations. Default = 10.
+    newton_iterations : int
+        Maximum number of newton iterations per ADMM loop. Default = 3.
+    denoiser_iterations : int
+        The number of denoiser iterations (if applicable). Default = 10.
+    convergence_crit : float
+        The value for the sum of the residuals to be smaller than and to stop
+        ADMM. Default = 1e-5
+
+    Returns
+    -------
+    np.array:
+       Denoised Image
+    """
 
     eta = 0.95
     gamma = 1.05
@@ -25,7 +74,9 @@ def admm_ratio_denoise(img: np.ndarray,
     # Log
     img_db = np.log10(img)
 
-    # see mulog pg. 4
+    # see:
+    # https://github.com/WeiyingZhao/Multitemporal-SAR-image-denoising/blob/master/rulog.m#L114
+    # the original paper references pg. 4 of Mulog paper.
     var = float(scipy.special.polygamma(1, L))
     beta = (1 + 2/L + 2/Lm) / var
 

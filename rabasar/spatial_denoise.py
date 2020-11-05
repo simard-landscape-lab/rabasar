@@ -14,29 +14,35 @@ def admm_spatial_denoise(img: np.ndarray,
                          newton_iterations: int = 3,
                          denoiser_iterations: int = 10,
                          convergence_crit: float = 1e-5) -> np.ndarray:
+
     """
-    This is an implementation of the variational approach discussed in [1].
+    We use the variables using Boyd's ADMM review article in [1].
+
+    This is an implementation of the variational approach discussed in [2].
     There are currently only two supported regularizers:
         + total-variation (`tv`)
         + bm3d (`bm3d`)
 
     The total variation regularizer is equivalent to the method discussed in
-    [2]. The general framework for the optimization procedure below is:
+    [3]. The general framework for the optimization procedure below is:
 
     $$
     X_d = argmin_{X}  R(X) + lamb cdot P(X | X_0)
     $$
 
     where $X_0$ is the original image and $X_d$ is the final despeckled image.
-    The implementation uses the TV method from [3] so that is why the
+    The implementation uses the TV method from [4] so that is why the
     regularization parameter is placed where it is. Technically, the weight
     parameter is 2 * lamb (using the original implementation's model). However,
     this is all selected heurisitically and so it's not so important.
 
-    [1] https://arxiv.org/abs/1704.05335
-    [2] https://arxiv.org/pdf/0912.1845.pdf
-    [3]
+
+    [1] https://stanford.edu/~boyd/papers/pdf/admm_distr_stats.pdf
+    [2] https://arxiv.org/abs/1704.05335
+    [3] https://arxiv.org/pdf/0912.1845.pdf
+    [4]
     https://scikit-image.org/docs/0.17.x/api/skimage.restoration.html#denoise-tv-bregman
+
 
     Parameters
     ----------
