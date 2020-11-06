@@ -81,16 +81,16 @@ Note this could more easily reproduced (relative to UAVSAR) because of the [asf 
 
   ```
   {
-    "sensor": "alos1",
+    "sensor": "uavsar",
     "site": "waxlake",
     "regularizer": "bm3d",
-    "spatial_weight": 0.05,
-    "temporal_average_spatial_weight": 0.005,
-    "ratio_weight": 0.05
+    "spatial_weight": 0.1,
+    "temporal_average_spatial_weight": 0.03,
+    "ratio_weight": 0.1
   }
   ```
 
 
 ### Remarks about BM3D 
 
-The `bm3d` regularizer is quite complex and thus required many more computational resources. In the notebooks, we only apply the RABASAR with the `bm3d` regularizer to a `1000 x 1000` box otherwise such an application would likely require days to run using the current implementation. Moreover, we also note the weights across the different despeckling tasks (despeckling the ratio image vs. the temporally averaged reference) is also different. We suspect that `bm3d` is more sensitive to smoothness in the image that is de-speckled than `tv`. Fortunately, we were able to use the same parameters for both ALOS-1 and for UAVSAR.
+The `bm3d` regularizer is quite complex and thus required many more computational resources. In the notebooks, we only apply the RABASAR with the `bm3d` regularizer to a `1000 x 1000` box otherwise such an application would likely require days to run using the current implementation. Moreover, we also note the weights across the different despeckling tasks (e.g. despeckling the ratio image and the temporally averaged reference had different weights). We suspect that `bm3d` is more sensitive to noise signatures than `tv`. Moreover, we used different parameters for ALOS-1 and for UAVSAR.

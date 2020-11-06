@@ -249,10 +249,14 @@ def get_cropped_profile(profile: dict,
     dict:
         The rasterio dictionary from cropping.
     """
+
     x_start = slice_x.start or 0
     y_start = slice_y.start or 0
     x_stop = slice_x.stop or profile['width']
     y_stop = slice_y.stop or profile['height']
+
+    if (x_start < 0) | (x_stop < 0) | (y_start < 0) | (y_stop < 0):
+        raise ValueError('Slices must be positive')
 
     width = x_stop - x_start
     height = y_stop - y_start

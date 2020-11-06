@@ -28,7 +28,11 @@ More explicitly, using the anaconda distribution for Mac or Windows:
     
 5. Ensure your python can be found by jupyter via `python -m ipykernel install --user`
 
-You can make sure your installation was done correctly running `python -c "import rabasar"` and/or running the notebooks. At some point, we may distribute on `pypi`, though would want more robust tests and simpler demonstrations.
+You can make sure your installation was done correctly running `python -c "import rabasar"` and/or running the notebooks. At some point, we may distribute on `pypi`, though would want more robust tests and simpler demonstrations. If there are problems with the pip distributions of the requirements alternatively, you can use conda via `conda install -c conda-forge --yes --file requirements.txt`.
+
+## Known Issues
+
+The [`bm3d`](http://www.cs.tut.fi/~foi/GCF-BM3D/), installed with `pip`, may kill the python interpreter without explanation. We did not have any issues with the `tv` regularizer.
 
 
 # References

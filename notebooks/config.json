@@ -1,8 +1,8 @@
 {
-  "sensor": "alos1",
+  "sensor": "uavsar",
   "site": "waxlake",
   "regularizer": "bm3d",
-  "spatial_weight": 1.0,
-  "temporal_average_spatial_weight": 1.0,
-  "ratio_weight": 1.0
+  "spatial_weight": 0.1,
+  "temporal_average_spatial_weight": 0.03,
+  "ratio_weight": 0.1
 }
