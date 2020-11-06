@@ -12,3 +12,4 @@ scipy>=1.4.1
 astropy
 lxml
 tqdm
+bm3d
