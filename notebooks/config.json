@@ -2,7 +2,7 @@
   "sensor": "alos1",
   "site": "waxlake",
   "regularizer": "bm3d",
-  "spatial_weight": 0.05,
-  "temporal_average_spatial_weight": 0.005,
-  "ratio_weight": 0.05
+  "spatial_weight": 1.0,
+  "temporal_average_spatial_weight": 1.0,
+  "ratio_weight": 1.0
 }

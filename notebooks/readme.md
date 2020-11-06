@@ -53,7 +53,7 @@ Note this could more easily reproduced (relative to UAVSAR) because of the [asf 
 
   ```
   {
-    "sensor": "alos1",
+    "sensor": "uavsar",
     "site": "waxlake",
     "regularizer": "tv",
     "spatial_weight": 1.0,
