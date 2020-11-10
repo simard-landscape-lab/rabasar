@@ -2,6 +2,17 @@
 
 This is a python implementation of Ratio-Based Multitemporal SAR Images Denoising from the [RABASAR](https://hal.archives-ouvertes.fr/hal-01791355/) paper. RABASAR is application of the so-called [plug-and-play denoisers](https://arxiv.org/abs/1605.01710) for SAR image de-speckling to a temporal stack of intensity images. 
 
+## Examples
+
+### Total Variation
+![original_tv](figures/rabasar_with_tv_original.png)
+![original_tv](figures/rabasar_with_tv_despeckled.png)
+
+### BM3D
+![original_tv](figures/rabasar_with_bm3d_original.png)
+![original_tv](figures/rabasar_with_bm3d_despeckled.png)
+
+
 ## Objectives
 
 We have two primary goals in this repository:
