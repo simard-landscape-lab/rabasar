@@ -4,6 +4,8 @@ This is a python implementation of Ratio-Based Multitemporal SAR Images Denoisin
 
 ## Examples
 
+These are subsets of UAVSAR over the Wax Lake Delta. They are HH polarized images in linear units.
+
 ### Total Variation
 ![original_tv](figures/rabasar_with_tv_original.png)
 ![original_tv](figures/rabasar_with_tv_despeckled.png)
