@@ -43,6 +43,16 @@ More explicitly, using the anaconda distribution for Mac or Windows:
 
 You can make sure your installation was done correctly running `python -c "import rabasar"` and/or running the notebooks. At some point, we may distribute on `pypi`, though would want more robust tests and simpler demonstrations. If there are problems with the pip distributions of the requirements alternatively, you can use conda via `conda install -c conda-forge --yes --file requirements.txt`.
 
+
+## With Docker
+
+This is mainly to ensure the binaries from `bm3d` can work with problematic mac environments. Clone this repository and navigate to on your local machine.
+
+1. `docker build -f docker/Dockerfile -t rabasar .` (this ensures the build context is the same as this repository)
+2. `docker run -ti -p 8888:8888 -v <path_to_local_repo>:/home/rabasar/notebooks rabasar` (make sure no jupyter notebooks are running with this port)
+3. From the container, navigate to `/home/rabasar/notebooks` and then run `jupyter notebook --ip 0.0.0.0 --no-browser --allow-root`.
+4. Copy the url with the token to your browser e.g. `localhost:8888/token...`.
+
 ## Known Issues
 
 The [`bm3d`](http://www.cs.tut.fi/~foi/GCF-BM3D/), installed with `pip`, may kill the python interpreter without explanation. We did not have any issues with the `tv` regularizer.
